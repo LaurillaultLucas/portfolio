@@ -1,0 +1,65 @@
+html{
+  display: flex;
+  min-height: 100vh;
+}
+
+body {
+  background-color: #414145;
+  color: #ffff;
+  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+  line-height: 1.5rem;
+  margin: auto;
+}
+
+
+header{
+  margin-bottom: 2rem;
+}
+
+
+main{
+  text-transform: uppercase;
+  margin: 1rem;
+}
+
+.photo__img{
+  display: block;
+  margin: auto;
+}
+
+.description{
+  border-top: solid #ffff 1px;
+  border-bottom: solid #ffff 1px;
+  text-align: center;
+}
+
+.description__title{
+  margin-top: 2.5rem;
+  font-size: 26px;
+  letter-spacing: 0.3rem;
+  font-weight: bold;
+}
+
+.description__paragraph{
+  margin-top: 1.5rem;
+  font-size: 13px;
+  letter-spacing: 0.2rem;
+  margin-bottom: 2.5rem;
+}
+
+nav{
+  display: flex;
+  margin-top: 2rem;
+  border: solid #ffff 1px;
+  justify-content: center;
+}
+
+
+a{
+  color: #ffff;
+  text-decoration: none;
+  padding: 0 1.25rem 0 1.45rem;
+}
+
+
+
