@@ -9,17 +9,23 @@ body {
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
   line-height: 1.5rem;
   margin: auto;
+  max-width: 800px;
 }
 
 
 header{
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 
 main{
   text-transform: uppercase;
   margin: 1rem;
+}
+
+footer{
+  margin-top: 3rem;
+  text-align: center;
 }
 
 .photo__img{
@@ -48,18 +54,35 @@ main{
 }
 
 nav{
+  margin-top: 3rem;
+}
+
+ul{
   display: flex;
-  margin-top: 2rem;
-  border: solid #ffff 1px;
   justify-content: center;
 }
 
-
 a{
+  display: block;
   color: #ffff;
   text-decoration: none;
-  padding: 0 1.25rem 0 1.45rem;
+  padding: 1rem 1.25rem 1rem 1.45rem;
+  border: solid #ffff 1px;
+  font-size: 13px;
+  letter-spacing: 0.2rem;
+  min-width: 5rem;
+  text-align: center;
 }
+
+a:hover{
+  background-color: #787880;
+  transition: 1s;
+}
+
+.about__link, .work__link, .cv__link{
+  border-right: none;
+}
+
 
 
 
