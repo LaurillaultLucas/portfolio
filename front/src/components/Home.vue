@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <div class="container">
       <header>
         <div class="photo">
             <img class="photo__img" src="https://source.unsplash.com/random/200x200/?portrait" alt="">
@@ -12,10 +13,10 @@
         </div>
             <nav>
                 <ul>
-                    <li><a class="about__link" href="http://127.0.0.1:5500/Integration/about.html">A propos</a></li>
-                    <li><a class="work__link" href="http://127.0.0.1:5500/Integration/work.html">Projets</a></li>
-                    <li><a class="cv__link" href="http://127.0.0.1:5500/Integration/cv.html">CV</a></li>
-                    <li><a class="contact__link" href="http://127.0.0.1:5500/Integration/contact.html">Contact</a></li>
+                    <li><a class="about__link" href="#about">A propos</a></li>
+                    <li><a class="work__link" href="#work">Projets</a></li>
+                    <li><a class="cv__link" href="#cv">CV</a></li>
+                    <li><a class="contact__link" href="#contact">Contact</a></li>
                 </ul>
             </nav>
     </main>
@@ -23,25 +24,29 @@
     <footer>
         <p>My Portfolio</p>
     </footer>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Home',
+  beforeCreate () {
+    document.querySelector('body').setAttribute('style', 'margin: 0')
+  },
 
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-    html{
+.home{
   display: flex;
   min-height: 100vh;
+  background-color: #414145;
 }
 
-body {
-  background-color: #414145;
+.container{
   color: #ffff;
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
   line-height: 1.5rem;
@@ -99,6 +104,10 @@ ul{
   justify-content: center;
 }
 
+li{
+  list-style: none;
+}
+
 a{
   display: block;
   color: #ffff;
@@ -119,4 +128,5 @@ a:hover{
 .about__link, .work__link, .cv__link{
   border-right: none;
 }
+
 </style>
