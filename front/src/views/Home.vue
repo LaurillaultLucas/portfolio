@@ -15,7 +15,7 @@
     </main>
 
     <footer>
-        <p>My Portfolio</p>
+        
     </footer>
     </div>
   </div>

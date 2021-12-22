@@ -2,7 +2,7 @@
     <div class="nav">
         <nav>
             <ul>
-                <li><a class="about__link" href="#about">A propos</a></li>
+                <li><a class="about__link" href="#about">À propos</a></li>
                 <li><a class="work__link" href="#work">Projets</a></li>
                 <li><a class="cv__link" href="#cv">CV</a></li>
                 <li><a class="contact__link" href="#contact">Contact</a></li>
