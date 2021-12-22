@@ -13,10 +13,6 @@
         </div>
             <Nav/>
     </main>
-
-    <footer>
-        
-    </footer>
     </div>
   </div>
 </template>
@@ -29,10 +25,6 @@ export default {
   components: {
     Nav
   },
-  beforeCreate () {
-    document.querySelector('body').setAttribute('style', 'margin: 0')
-  },
-
 }
 </script>
 
@@ -45,8 +37,6 @@ export default {
 }
 
 .container{
-  color: #ffff;
-  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
   line-height: 1.5rem;
   margin: auto;
   max-width: 800px;
@@ -57,15 +47,8 @@ header{
   margin-bottom: 3rem;
 }
 
-
 main{
   text-transform: uppercase;
-  margin: 1rem;
-}
-
-footer{
-  margin-top: 3rem;
-  text-align: center;
 }
 
 .photo__img{
@@ -77,6 +60,7 @@ footer{
   border-top: solid #ffff 1px;
   border-bottom: solid #ffff 1px;
   text-align: center;
+  margin-bottom: 3rem;
 }
 
 .description__title{

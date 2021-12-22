@@ -1,20 +1,22 @@
 <template>
   <div id="app">
-    <Home />
+       <router-view/>
   </div>
 </template>
 
 <script>
-import Home from './views/Home.vue'
 
 export default {
   name: 'App',
-  components: {
-    Home
-  }
 }
 </script>
 
 <style lang="scss">
 
+body{
+  background-color: #414145;
+  color: #ffff;
+  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+  margin: 0;
+}
 </style>
