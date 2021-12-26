@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <div class="container">
       <header>
         <div class="photo">
             <img class="photo__img" src="https://source.unsplash.com/random/200x200/?portrait" alt="">
@@ -10,38 +11,40 @@
             <h1 class="description__title">lucas laurillault</h1>
             <p class="description__paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate maxime perspiciatis facilis nesciunt id deserunt ea sapiente voluptates quisquam.</p>
         </div>
-            <nav>
-                <ul>
-                    <li><a class="about__link" href="http://127.0.0.1:5500/Integration/about.html">A propos</a></li>
-                    <li><a class="work__link" href="http://127.0.0.1:5500/Integration/work.html">Projets</a></li>
-                    <li><a class="cv__link" href="http://127.0.0.1:5500/Integration/cv.html">CV</a></li>
-                    <li><a class="contact__link" href="http://127.0.0.1:5500/Integration/contact.html">Contact</a></li>
-                </ul>
-            </nav>
+            <Nav/>
     </main>
 
     <footer>
         <p>My Portfolio</p>
     </footer>
+    </div>
   </div>
 </template>
 
 <script>
+import Nav from '../components/Nav'
+
 export default {
   name: 'Home',
+  components: {
+    Nav
+  },
+  beforeCreate () {
+    document.querySelector('body').setAttribute('style', 'margin: 0')
+  },
 
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-    html{
+.home{
   display: flex;
   min-height: 100vh;
+  background-color: #414145;
 }
 
-body {
-  background-color: #414145;
+.container{
   color: #ffff;
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
   line-height: 1.5rem;
@@ -88,35 +91,5 @@ footer{
   font-size: 13px;
   letter-spacing: 0.2rem;
   margin-bottom: 2.5rem;
-}
-
-nav{
-  margin-top: 3rem;
-}
-
-ul{
-  display: flex;
-  justify-content: center;
-}
-
-a{
-  display: block;
-  color: #ffff;
-  text-decoration: none;
-  padding: 1rem 1.25rem 1rem 1.45rem;
-  border: solid #ffff 1px;
-  font-size: 13px;
-  letter-spacing: 0.2rem;
-  min-width: 5rem;
-  text-align: center;
-}
-
-a:hover{
-  background-color: #787880;
-  transition: 1s;
-}
-
-.about__link, .work__link, .cv__link{
-  border-right: none;
 }
 </style>
