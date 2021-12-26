@@ -8,6 +8,8 @@
 
 export default {
   name: 'App',
+  components:{
+  },
 }
 </script>
 
@@ -15,8 +17,10 @@ export default {
 
 body{
   background-color: #414145;
-  color: #ffff;
-  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
-  margin: 0;
+  font-family: 'Source Sans Pro',Arial, Helvetica, sans-serif;
+  margin: auto;
+  max-width: 1200px;
+  line-height: 1.5rem;
+  letter-spacing: 1px;
 }
 </style>

@@ -9,21 +9,26 @@
     <main>
         <div class="description">
             <h1 class="description__title">lucas laurillault</h1>
-            <p class="description__paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate maxime perspiciatis facilis nesciunt id deserunt ea sapiente voluptates quisquam.</p>
+            <p class="description__paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eaque maxime quod, in sit officia sint a omnis incidunt corporis nulla iusto fuga commodi velit, repellendus eveniet aperiam impedit.</p>
         </div>
             <Nav/>
-    </main>
+        </main>
+        <footer>
+            <Footer class="home-footer"/>
+        </footer>
     </div>
   </div>
 </template>
 
 <script>
 import Nav from '../components/Nav'
+import Footer from '../components/Footer'
 
 export default {
   name: 'Home',
   components: {
-    Nav
+    Nav,
+    Footer
   },
 }
 </script>
@@ -32,14 +37,13 @@ export default {
 <style scoped lang="scss">
 .home{
   display: flex;
-  min-height: 100vh;
   background-color: #414145;
+  height: 100vh;
 }
 
 .container{
   line-height: 1.5rem;
   margin: auto;
-  max-width: 800px;
 }
 
 
@@ -47,33 +51,28 @@ header{
   margin-bottom: 3rem;
 }
 
-main{
-  text-transform: uppercase;
-}
-
 .photo__img{
   display: block;
-  margin: auto;
+  margin: 1rem auto;
 }
 
 .description{
   border-top: solid #ffff 1px;
   border-bottom: solid #ffff 1px;
   text-align: center;
-  margin-bottom: 3rem;
+  margin: 0rem 3rem 3rem 3rem;
+  color: #ffff;
 }
 
 .description__title{
   margin-top: 2.5rem;
   font-size: 26px;
-  letter-spacing: 0.3rem;
-  font-weight: bold;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
 }
 
 .description__paragraph{
   margin-top: 1.5rem;
-  font-size: 13px;
-  letter-spacing: 0.2rem;
   margin-bottom: 2.5rem;
 }
 </style>

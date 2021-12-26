@@ -21,6 +21,7 @@ export default {
 <style scoped lang="scss">
 nav{
   text-transform: uppercase;
+  margin-bottom: 3rem;
 }
 
 ul{
