@@ -2,7 +2,7 @@
     <div class="nav">
         <nav>
             <ul>
-                <li><a class="about__link" href="#about">A propos</a></li>
+                <div><router-link class="about" :to="{name: 'about'}">À propos</router-link></div>
                 <li><a class="work__link" href="#work">Projets</a></li>
                 <li><a class="cv__link" href="#cv">CV</a></li>
                 <li><a class="contact__link" href="#contact">Contact</a></li>
@@ -20,12 +20,14 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 nav{
-  margin-top: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
 }
 
 ul{
   display: flex;
   justify-content: center;
+  padding: 0;
 }
 
 li{
@@ -46,10 +48,10 @@ a{
 
 a:hover{
   background-color: #787880;
-  transition: 1s;
+  transition: 0.5s;
 }
 
-.about__link, .work__link, .cv__link{
+.about, .work__link, .cv__link{
   border-right: none;
 }
 </style>
