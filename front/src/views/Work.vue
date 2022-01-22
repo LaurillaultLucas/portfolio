@@ -52,7 +52,7 @@ main{
                 height: 360px;
                 width: 360px;
                 background-color: rgba(#000000, 0.7);
-                transition: 1s;
+                border: solid #ffff 1px;
 
                 a{
                         color: #ffff;

@@ -5,7 +5,7 @@
                 <li><router-link class="about" :to="{name: 'about'}">À propos</router-link></li>
                 <li><router-link class="work" :to="{name: 'work'}">Projets</router-link></li>
                 <li><a class="cv__link" href="#cv">CV</a></li>
-                <li><a class="contact__link" href="#contact">Contact</a></li>
+                <li><router-link class="contact" :to="{name: 'contact'}">Contact</router-link></li>
             </ul>
         </nav>
     </div>
