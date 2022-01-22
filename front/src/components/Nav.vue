@@ -2,8 +2,8 @@
     <div class="nav">
         <nav>
             <ul>
-                <div><router-link class="about" :to="{name: 'about'}">À propos</router-link></div>
-                <li><a class="work__link" href="#work">Projets</a></li>
+                <li><router-link class="about" :to="{name: 'about'}">À propos</router-link></li>
+                <li><router-link class="work" :to="{name: 'work'}">Projets</router-link></li>
                 <li><a class="cv__link" href="#cv">CV</a></li>
                 <li><a class="contact__link" href="#contact">Contact</a></li>
             </ul>

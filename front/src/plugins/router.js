@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
+import Work from '../views/Work.vue'
 
 Vue.use(VueRouter)
 
@@ -18,6 +19,12 @@ const routes = [
       path: '/about', // URL configuration to match
       name: 'about', // road name
       component: About // component to call
+    },
+
+    {
+      path: '/projets', // URL configuration to match
+      name: 'work', // road name
+      component: Work // component to call
     },
 ]
 
