@@ -1,6 +1,6 @@
 <template>
     <div class="work">
-        <Header />
+        <Nav />
         <main>
             <ul>
                 <li>
@@ -18,9 +18,9 @@
 
 <script>
 import Footer from '../components/Footer.vue'
-import Header from '../components/Header.vue'
+import Nav from '../components/Nav.vue'
 export default {
-  components: { Header, Footer },
+  components: { Footer, Nav },
   name: 'Work'
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
     <div class="contact">
-       <Header />
+       <Nav />
         <main>
             <h1>Contact</h1>
             <form action="">
@@ -25,9 +25,9 @@
 
 <script>
 import Footer from '../components/Footer.vue'
-import Header from '../components/Header.vue'
+import Nav from '../components/Nav.vue'
 export default {
-  components: { Header, Footer },
+  components: { Footer, Nav },
   name: 'Contact'
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-      <Header />
+      <Nav />
       <main>
           <section class="front-end">
               <i class="fab fa-js"></i>
@@ -47,14 +47,14 @@
 
 <script>
 
-import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Nav from '../components/Nav.vue'
 
 export default {
   name: 'About',
   components: {
-    Header,
-    Footer
+    Footer,
+    Nav
   },
 }
 </script>
