@@ -1,6 +1,5 @@
 <template>
     <div class="contact">
-       <Nav />
         <main>
             <h1>Contact</h1>
             <form action="">
@@ -19,15 +18,12 @@
                 <button type="submit">Envoyé</button>
             </form>
         </main>
-       <Footer />
     </div>
 </template>
 
 <script>
-import Footer from '../components/Footer.vue'
-import Nav from '../components/Nav.vue'
 export default {
-  components: { Footer, Nav },
+  components: {},
   name: 'Contact'
 }
 </script>
@@ -35,16 +31,17 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
     main{
-
         color: white;
-        max-width: 664px;
         margin: auto;
-
+        padding: 0.5rem;
+        
         h1{
             font-size: 3rem;
         }
 
         form {
+            width: 90vw;
+            max-width: 664px;
 
             button{
                 display: flex;

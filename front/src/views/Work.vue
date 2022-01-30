@@ -1,6 +1,5 @@
 <template>
     <div class="work">
-        <Nav />
         <main>
             <ul>
                 <li>
@@ -9,18 +8,39 @@
                         <a href="#voir">Voir</a>
                     </div>
                 </li>
-                
+                <li>
+                    <img src="https://source.unsplash.com/random/360x360/?web" alt="">
+                    <div>
+                        <a href="#voir">Voir</a>
+                    </div>
+                </li>
+                <li>
+                    <img src="https://source.unsplash.com/random/360x360/?web" alt="">
+                    <div>
+                        <a href="#voir">Voir</a>
+                    </div>
+                </li>
+                <li>
+                    <img src="https://source.unsplash.com/random/360x360/?web" alt="">
+                    <div>
+                        <a href="#voir">Voir</a>
+                    </div>
+                </li>
+                <li>
+                    <img src="https://source.unsplash.com/random/360x360/?web" alt="">
+                    <div>
+                        <a href="#voir">Voir</a>
+                    </div>
+                </li>
             </ul>
         </main>
-        <Footer />
     </div>
 </template>
 
 <script>
-import Footer from '../components/Footer.vue'
-import Nav from '../components/Nav.vue'
+
 export default {
-  components: { Footer, Nav },
+  components: {},
   name: 'Work'
 }
 </script>
@@ -29,7 +49,7 @@ export default {
 <style scoped lang="scss">
 
 main{
-
+   
     ul{
         display: flex;
         flex-wrap: wrap;
@@ -55,26 +75,27 @@ main{
                 border: solid #ffff 1px;
 
                 a{
-                        color: #ffff;
-                        text-decoration: none;
-                        text-transform: uppercase;
-                        padding: 1rem 1.25rem 1rem 1.45rem;
-                        border: solid #ffff 1px;
-                        font-size: 13px;
-                        letter-spacing: 0.2rem;
-                        text-align: center;
-                        position: relative;
-                        top: 47%;
-                        left: 40%;
-                   }
+                    color: #ffff;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    padding: 1rem 1.25rem 1rem 1.45rem;
+                    border: solid #ffff 1px;
+                    font-size: 13px;
+                    letter-spacing: 0.2rem;
+                    text-align: center;
+                    position: relative;
+                    top: 47%;
+                    left: 40%;
+                }
             }
         }
     }
+
+}
 
     li:hover div{
         display: block;
     }
 
-}
 
 </style>

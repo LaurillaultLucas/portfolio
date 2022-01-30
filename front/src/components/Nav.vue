@@ -20,8 +20,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 nav{
+  display: flex;
+  justify-content: center;
   text-transform: uppercase;
-  margin-bottom: 3rem;
 }
 
 ul{
