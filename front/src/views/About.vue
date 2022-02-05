@@ -1,6 +1,5 @@
 <template>
   <div class="about">
-      <Header />
       <main>
           <section class="front-end">
               <i class="fab fa-js"></i>
@@ -41,29 +40,24 @@
               </ul>
           </section>
       </main>
-      <Footer />
   </div>
 </template>
 
 <script>
 
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-
 export default {
   name: 'About',
-  components: {
-    Header,
-    Footer
-  },
+  components: {},
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
     main{
-        box-sizing: border-box;
         display: flex;
+        flex-direction: initial;
+        justify-content: initial;
+        align-items: initial;
         margin: auto;
         margin-bottom: 2.5rem;
 
@@ -71,7 +65,8 @@ export default {
             text-align: center;
             color: #ffff;
             padding: 0rem 2rem 0rem 2rem;
-            width: 30%;   
+            width: 30%;
+            padding: 2rem 2rem 1rem 2rem;
             i{
                 font-size: 3rem;
             }
@@ -93,6 +88,21 @@ export default {
             
             li{
                 list-style-type: none;
+            }
+        }
+    }
+
+    @media screen and (max-width: 830px){
+
+        main{
+            display: flex;
+            flex-direction: column;
+
+            section{
+                width: 80%;
+                margin: auto;
+                border-bottom: solid #ffff 0.5px;
+                padding: 2rem;
             }
         }
     }

@@ -2,10 +2,10 @@
     <div class="nav">
         <nav>
             <ul>
+                <li><router-link class="home" :to="{name: 'home'}">Acceuil</router-link></li>
                 <li><router-link class="about" :to="{name: 'about'}">À propos</router-link></li>
                 <li><router-link class="work" :to="{name: 'work'}">Projets</router-link></li>
-                <li><a class="cv__link" href="#cv">CV</a></li>
-                <li><a class="contact__link" href="#contact">Contact</a></li>
+                <li><router-link class="contact" :to="{name: 'contact'}">Contact</router-link></li>
             </ul>
         </nav>
     </div>
@@ -20,13 +20,15 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 nav{
+  display: flex;
+  justify-content: center;
   text-transform: uppercase;
-  margin-bottom: 3rem;
 }
 
 ul{
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   padding: 0;
 }
 
@@ -35,15 +37,13 @@ li{
 }
 
 a{
-  display: block;
   color: #ffff;
   text-decoration: none;
-  padding: 1rem 1.25rem 1rem 1.45rem;
+  padding: 1rem 1rem 1rem 1rem;
   border: solid #ffff 1px;
   font-size: 13px;
   letter-spacing: 0.2rem;
   min-width: 5rem;
-  text-align: center;
 }
 
 a:hover{
@@ -51,7 +51,16 @@ a:hover{
   transition: 0.5s;
 }
 
-.about, .work__link, .cv__link{
+.work, .about, .home{
   border-right: none;
+}
+
+@media screen and (max-width: 480px){
+
+  a{
+    font-size: 9px;
+    padding: 1rem;
+  }
+
 }
 </style>
