@@ -1,20 +1,36 @@
 <template>
   <div class="home">
     <main>
-        <div class="description">
+        <div v-for="post in posts" :key="post.id"   class="description">
             <img class="photo__img" src="https://source.unsplash.com/random/200x200/?portrait" alt="">
-            <h1 class="description__title">lucas laurillault</h1>
-            <p class="description__paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eaque maxime quod, in sit officia sint a omnis incidunt corporis nulla iusto fuga commodi velit, repellendus eveniet aperiam impedit.</p>
+            <h1 class="description__title">{{post.title.rendered}}</h1>
+            <p v-html="post.content.rendered" class="description__paragraph"></p>
         </div>
     </main>
     </div>
 </template>
 
 <script> 
+
+import postService from '../services/postService.js';
+
 export default {
   name: 'Home',
   components: {},
+  
+  data(){
+    return {
+      posts: [],
+    };
+  },
+
+  async created(){
+      console.log("Le composant PostList vient d'être créer")
+         //je suis au niveau de la creation du composant dans son cycle de vie !
+      this.posts = await postService.loadPosts();
+  },
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
