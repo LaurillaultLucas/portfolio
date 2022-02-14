@@ -44,4 +44,18 @@ main{
   align-items: center;
   justify-content: center;
 }
+
+li{
+  list-style: none;
+}
+
+ul{
+  padding: 0;
+}
+
+h2{
+  letter-spacing: 0.2rem;
+  margin-top: 3rem;
+  font-size: 1.3rem;
+}
 </style>

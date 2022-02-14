@@ -1,43 +1,9 @@
 <template>
   <div class="about">
-      <div>
-          <section class="front-end">
-              <i class="fab fa-js"></i>
-              <h1>Front-end</h1>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam amet reiciendis iste? Blanditiis, corrupti. Inventore odit velit soluta iure voluptas! Eum doloremque quis dolorem id debitis eligendi rem minus voluptatem.</p>
-              <h2>Compétences</h2>
-              <ul>
-                  <li>HTML</li>
-                  <li>CSS</li>
-                  <li>SASS</li>
-                  <li>Javascript</li>
-                  <li>VueJS</li>
-              </ul>
-          </section>
-          <section class="back-end">
-              <i class="fab fa-php"></i>
-              <h1>Back-end</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique provident neque, repudiandae, numquam, beatae sequi aliquam sit ipsam nobis vitae voluptate et qui. Molestiae ab blanditiis provident impedit reprehenderit modi.</p>
-              <h2>Compétences</h2>
-              <ul>
-                  <li>PHP</li>
-                  <li>Wordpress</li>
-                  <li>MySQL</li>        
-                  <li>MCD</li>
-              </ul>
-          </section>
-          <section class="tools">
-              <i class="fas fa-gamepad"></i>
-              <h1>Outils</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique provident neque, repudiandae, numquam, beatae sequi aliquam sit ipsam nobis vitae voluptate et qui. Molestiae ab blanditiis provident impedit reprehenderit modi.</p>
-              <h2>Je travail avec</h2>
-              <ul>
-                  <li>VSCode</li>
-                  <li>Github</li>
-                  <li>Mac OS/Linux/Windows</li>        
-                  <li>Terminal</li>
-                  <li>Whimsical</li>
-              </ul>
+      <div class="container">
+          <section v-for="aboutPost in aboutPosts" :key="aboutPost.id" class="front-end">
+              <h1>{{aboutPost.title.rendered}}</h1>
+              <p v-html="aboutPost.content.rendered"></p>
           </section>
       </div>
   </div>
@@ -53,14 +19,14 @@ export default {
 
   data(){
     return {
-      loadProjects: [],
+      aboutPosts: [],
     };
   },
 
   async created(){
-      console.log("Le composant PostProject vient d'être créer")
+      console.log("Le composant loadAboutPosts vient d'être créer")
          //je suis au niveau de la creation du composant dans son cycle de vie !
-      this.posts = await postService.loadProjects();
+      this.aboutPosts = await postService.loadAboutPosts();
   },
 }
 </script>
@@ -84,31 +50,12 @@ export default {
             i{
                 font-size: 3rem;
             }
-
-            h1{
-                letter-spacing: 0.2rem;
-                margin-top: 3rem;
-            }
-
-            h2{
-                letter-spacing: 0.2rem;
-                margin-top: 3rem;
-                font-size: 1.3rem;
-            }
-            
-            ul{
-                padding: 0;
-            }
-            
-            li{
-                list-style-type: none;
-            }
         }
     }
 
     @media screen and (max-width: 830px){
 
-        main{
+        div{
             display: flex;
             flex-direction: column;
 

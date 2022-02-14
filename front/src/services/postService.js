@@ -16,6 +16,13 @@ const postService = {
             console.log(response.data);
             return response.data;
         },
+
+        async loadAboutPosts(){
+            console.log('On est dans loadAboutPosts !!!');
+            const response = await axios.get(postService.baseURI + '/about');
+            console.log(response.data);
+            return response.data;
+        },
 };
 
 export default postService;
