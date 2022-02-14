@@ -27,11 +27,10 @@ export default {
      flex-direction: column;
      justify-content: center;
      text-align: center;
-
      ul{
          padding: 0;
          margin: 0;
-    
+         
         li{
             display: inline;
             list-style: none;
