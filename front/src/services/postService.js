@@ -9,6 +9,13 @@ const postService = {
             console.log(response.data);
             return response.data;
         },
+
+        async loadProjects(){
+            console.log('On est dans loadProjects !!!');
+            const response = await axios.get(postService.baseURI + '/projects');
+            console.log(response.data);
+            return response.data;
+        },
 };
 
 export default postService;

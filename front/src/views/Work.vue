@@ -1,6 +1,6 @@
 <template>
     <div class="work">
-        <main>
+        <div>
             <ul>
                 <li>
                     <img src="https://source.unsplash.com/random/360x360/?web" alt="">
@@ -33,7 +33,7 @@
                     </div>
                 </li>
             </ul>
-        </main>
+        </div>
     </div>
 </template>
 
@@ -48,7 +48,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 
-main{
+div{
    
     ul{
         display: flex;
