@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-      <main>
+      <div>
           <section class="front-end">
               <i class="fab fa-js"></i>
               <h1>Front-end</h1>
@@ -39,21 +39,35 @@
                   <li>Whimsical</li>
               </ul>
           </section>
-      </main>
+      </div>
   </div>
 </template>
 
 <script>
 
+import postService from '../services/postService.js';
+
 export default {
   name: 'About',
   components: {},
+
+  data(){
+    return {
+      loadProjects: [],
+    };
+  },
+
+  async created(){
+      console.log("Le composant PostProject vient d'être créer")
+         //je suis au niveau de la creation du composant dans son cycle de vie !
+      this.posts = await postService.loadProjects();
+  },
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-    main{
+    div{
         display: flex;
         flex-direction: initial;
         justify-content: initial;

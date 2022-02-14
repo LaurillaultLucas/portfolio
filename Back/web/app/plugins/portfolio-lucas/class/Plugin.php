@@ -14,6 +14,11 @@ class Plugin {
 
         add_action(
         'init',
+        [$this, 'portfolio_create_about_post_type']
+        );
+
+        add_action(
+        'init',
         [$this, 'portfolio_create_techno_custom_taxonomy']
         );
 
@@ -54,6 +59,40 @@ class Plugin {
 
     }
 
+    public function portfolio_create_about_post_type()
+    {
+
+        // Method that allows us to add CPT
+        $labels = [
+            'name' => 'À propos',
+            'all_items' => 'Tout les articles',
+            'singular_name' => 'À propos',
+            'add_new_item' => 'Ajouter un post',
+            'edit_item' => 'Modifier le post',
+            'menu_name' => 'À propos'
+        ];
+
+        $args = [
+            'labels' => $labels,
+            'public' => true,
+            'show_in_rest' => true,
+            'has_archive' => true,
+            'supports' => [
+                'title',
+                'editor',
+                'thumbnail',
+                'revisions',
+                'excerpt',
+                'custom-fields'
+            ],
+            'menu_position' => 6,
+            'menu_icon' => 'dashicons-book'
+        ];
+
+        register_post_type('about', $args);
+
+    }
+
     public function portfolio_create_techno_custom_taxonomy()
     {
         $labels = [
@@ -68,7 +107,7 @@ class Plugin {
             'hierarchical' => false
         ];
 
-        register_taxonomy('technos', 'projects', $args);
+        register_taxonomy('technos', 'projects', 'about', $args);
     }
 
 
