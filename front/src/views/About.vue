@@ -1,6 +1,6 @@
 <template>
       <div class="about">
-          <section v-for="aboutPost in aboutPosts" :key="aboutPost.id" class="front-end">
+          <section v-for="aboutPost in aboutPosts" :key="aboutPost.id">
               <h1>{{aboutPost.title.rendered}}</h1>
               <p v-html="aboutPost.content.rendered"></p>
           </section>

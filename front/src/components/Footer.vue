@@ -4,6 +4,7 @@
             <ul>
                 <li class="first-link"><a target="_blank" href="https://github.com/LaurillaultLucas"><i class="fab fa-github-square"></i></a></li>
                 <li class="second-link"><a target="_blank" href="https://www.linkedin.com/in/lucas-laurillault/"><i class="fab fa-linkedin"></i></a></li>
+                <li class="third-link"><a target="_blank" href="mailto:lucaslaurillault@gmail.com"><i class="fas fa-square-envelope"></i></a></li>
             </ul>
         </div>
         <div class="info">
@@ -48,7 +49,11 @@ export default {
 
     .second-link{
                 margin-left: 10px;
-            }
+        }
+
+    .third-link{
+                margin-left: 10px;
+        }
 
     .paragraph-info{
            color: lightgray;

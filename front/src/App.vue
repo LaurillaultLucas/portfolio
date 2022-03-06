@@ -58,4 +58,8 @@ h2{
   margin-top: 3rem;
   font-size: 1.3rem;
 }
+
+figure{
+  margin: 0;
+}
 </style>
