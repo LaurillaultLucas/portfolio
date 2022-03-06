@@ -1,12 +1,10 @@
 <template>
-  <div class="about">
-      <div class="container">
+      <div class="about">
           <section v-for="aboutPost in aboutPosts" :key="aboutPost.id" class="front-end">
               <h1>{{aboutPost.title.rendered}}</h1>
               <p v-html="aboutPost.content.rendered"></p>
           </section>
       </div>
-  </div>
 </template>
 
 <script>

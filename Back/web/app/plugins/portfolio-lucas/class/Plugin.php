@@ -22,6 +22,11 @@ class Plugin {
         [$this, 'portfolio_create_techno_custom_taxonomy']
         );
 
+        add_action(
+            'init',
+            [$this, 'portfolio_create_myWork_post_type']
+        );
+
 
     }
 
@@ -85,7 +90,7 @@ class Plugin {
                 'excerpt',
                 'custom-fields'
             ],
-            'menu_position' => 6,
+            'menu_position' => 5,
             'menu_icon' => 'dashicons-book'
         ];
 
@@ -108,6 +113,40 @@ class Plugin {
         ];
 
         register_taxonomy('technos', 'projects', 'about', $args);
+    }
+
+    public function portfolio_create_myWork_post_type()
+    {
+
+        // Method that allows us to add CPT
+        $labels = [
+            'name' => 'Mes réalisations',
+            'all_items' => 'Tout les articles',
+            'singular_name' => 'Mes réalisations',
+            'add_new_item' => 'Ajouter un post',
+            'edit_item' => 'Modifier le post',
+            'menu_name' => 'Mes réalisations'
+        ];
+
+        $args = [
+            'labels' => $labels,
+            'public' => true,
+            'show_in_rest' => true,
+            'has_archive' => true,
+            'supports' => [
+                'title',
+                'editor',
+                'thumbnail',
+                'revisions',
+                'excerpt',
+                'custom-fields'
+            ],
+            'menu_position' => 6,
+            'menu_icon' => 'dashicons-art'
+        ];
+
+        register_post_type('myWork', $args);
+
     }
 
 
