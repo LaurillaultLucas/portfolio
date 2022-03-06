@@ -1,35 +1,11 @@
 <template>
     <div class="work">
         <div>
-            <ul>
+            <ul  v-for="projectsPost in projectsPosts" :key="projectsPost.id">
                 <li>
-                    <img src="https://source.unsplash.com/random/360x360/?web" alt="">
+                    <p v-html="projectsPost.content.rendered"></p>
                     <div>
-                        <a href="#voir">Voir</a>
-                    </div>
-                </li>
-                <li>
-                    <img src="https://source.unsplash.com/random/360x360/?web" alt="">
-                    <div>
-                        <a href="#voir">Voir</a>
-                    </div>
-                </li>
-                <li>
-                    <img src="https://source.unsplash.com/random/360x360/?web" alt="">
-                    <div>
-                        <a href="#voir">Voir</a>
-                    </div>
-                </li>
-                <li>
-                    <img src="https://source.unsplash.com/random/360x360/?web" alt="">
-                    <div>
-                        <a href="#voir">Voir</a>
-                    </div>
-                </li>
-                <li>
-                    <img src="https://source.unsplash.com/random/360x360/?web" alt="">
-                    <div>
-                        <a href="#voir">Voir</a>
+                        <a href="https://github.com/LaurillaultLucas/portfolio" target="_blank">Voir</a>
                     </div>
                 </li>
             </ul>
@@ -39,10 +15,27 @@
 
 <script>
 
+import postService from '../services/postService.js';
+
 export default {
   components: {},
-  name: 'Work'
+  name: 'Work',
+
+  data(){
+    return {
+      projectsPosts: [],
+    };
+  },
+
+  async created(){
+      console.log("Le composant loadProjects vient d'être créer")
+         //je suis au niveau de la creation du composant dans son cycle de vie !
+      this.projectsPosts = await postService.loadProjects();
+  },
 }
+
+
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -63,16 +56,17 @@ div{
             width: 360px;
             background-color: lightgrey;
             margin: 0.5rem;
+            margin: 0;
+            border: solid #ffff 0.5px;
 
             div{
+                display: none;
                 position: absolute;
                 top: 0;
                 left: 0;
-                display: none;
                 height: 360px;
                 width: 360px;
-                background-color: rgba(#000000, 0.7);
-                border: solid #ffff 1px;
+                background-color: rgba($color: #000000, $alpha: 0.5);
 
                 a{
                     color: #ffff;
@@ -93,9 +87,11 @@ div{
 
 }
 
+    p{
+        margin: 0;
+    }
+
     li:hover div{
         display: block;
     }
-
-
 </style>

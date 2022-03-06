@@ -5,7 +5,8 @@
                 <li><router-link class="home" :to="{name: 'home'}">Acceuil</router-link></li>
                 <li><router-link class="about" :to="{name: 'about'}">À propos</router-link></li>
                 <li><router-link class="work" :to="{name: 'work'}">Projets</router-link></li>
-                <li><router-link class="contact" :to="{name: 'contact'}">Contact</router-link></li>
+                <!-- Liens qui ne servira peut être à rien mais je le garde au cas où
+                <li><router-link class="contact" :to="{name: 'contact'}">Contact</router-link></li>-->
             </ul>
         </nav>
     </div>
@@ -51,16 +52,16 @@ a:hover{
   transition: 0.5s;
 }
 
-.work, .about, .home{
+.about, .home{
   border-right: none;
 }
 
-@media screen and (max-width: 480px){
+//@media screen and (max-width: 480px){
 
-  a{
-    font-size: 9px;
-    padding: 1rem;
-  }
-
-}
+  //a{
+    //font-size: 9px;
+    //padding: 1rem;
+  //}
+  
+//}
 </style>
