@@ -26,8 +26,6 @@ class Plugin {
             'init',
             [$this, 'portfolio_create_myWork_post_type']
         );
-
-
     }
 
     public function portfolio_create_project_post_type()
@@ -57,10 +55,27 @@ class Plugin {
                 'custom-fields'
             ],
             'menu_position' => 5,
-            'menu_icon' => 'dashicons-code-standards'
+            'menu_icon' => 'dashicons-code-standards',
+            'map_meta_cap' => true,
         ];
 
         register_post_type('projects', $args);
+
+        register_meta('post', 'Github', [
+            'object_subtype' => 'projects', 
+            'type'           => 'string',
+            'description'    => 'github link',
+            'single'         => true,
+            'show_in_rest'   => true,
+        ]);
+
+        register_meta('post', 'Site', [
+            'object_subtype' => 'projects', 
+            'type'           => 'string',
+            'description'    => 'Site link',
+            'single'         => true,
+            'show_in_rest'   => true,
+        ]);
 
     }
 

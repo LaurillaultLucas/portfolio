@@ -5,7 +5,7 @@
                 <li>
                     <p v-html="projectsPost.content.rendered"></p>
                     <div>
-                        <a href="https://github.com/LaurillaultLucas/portfolio" target="_blank">Voir</a>
+                        <a v-bind:href="projectsPost.meta.Github" target="_blank">Voir</a>
                     </div>
                 </li>
             </ul>
