@@ -26,6 +26,11 @@ class Plugin {
             'init',
             [$this, 'portfolio_create_myWork_post_type']
         );
+
+        add_action(
+            'init',
+            [$this, 'portfolio_create_link_post_type']
+        );
     }
 
     public function portfolio_create_project_post_type()
@@ -68,15 +73,6 @@ class Plugin {
             'single'         => true,
             'show_in_rest'   => true,
         ]);
-
-        register_meta('post', 'site', [
-            'object_subtype' => 'projects', 
-            'type'           => 'string',
-            'description'    => 'Site link',
-            'single'         => true,
-            'show_in_rest'   => true,
-        ]);
-
     }
 
     public function portfolio_create_about_post_type()
@@ -162,5 +158,47 @@ class Plugin {
 
         register_post_type('myWork', $args);
 
+    }
+
+    public function portfolio_create_link_post_type()
+    {
+
+        // Method that allows us to add CPT
+        $labels = [
+            'name' => 'Liens Footer',
+            'all_items' => 'Tout les liens',
+            'singular_name' => 'lien',
+            'add_new_item' => 'Ajouter un lien',
+            'edit_item' => 'Modifier le lien',
+            'menu_name' => 'Liens'
+        ];
+
+        $args = [
+            'labels' => $labels,
+            'public' => true,
+            'show_in_rest' => true,
+            'has_archive' => true,
+            'supports' => [
+                'title',
+                'editor',
+                'thumbnail',
+                'revisions',
+                'excerpt',
+                'custom-fields'
+            ],
+            'menu_position' => 7,
+            'menu_icon' => 'dashicons-admin-links',
+            'map_meta_cap' => true,
+        ];
+
+        register_post_type('link', $args);
+
+        register_meta('post', 'lien', [
+            'object_subtype' => 'link', 
+            'type'           => 'string',
+            'description'    => 'footer link',
+            'single'         => true,
+            'show_in_rest'   => true,
+        ]);
     }
 }
