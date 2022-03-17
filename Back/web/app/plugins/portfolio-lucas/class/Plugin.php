@@ -61,7 +61,7 @@ class Plugin {
 
         register_post_type('projects', $args);
 
-        register_meta('post', 'Github', [
+        register_meta('post', 'github', [
             'object_subtype' => 'projects', 
             'type'           => 'string',
             'description'    => 'github link',
@@ -69,7 +69,7 @@ class Plugin {
             'show_in_rest'   => true,
         ]);
 
-        register_meta('post', 'Site', [
+        register_meta('post', 'site', [
             'object_subtype' => 'projects', 
             'type'           => 'string',
             'description'    => 'Site link',
@@ -163,6 +163,4 @@ class Plugin {
         register_post_type('myWork', $args);
 
     }
-
-
 }

@@ -2,7 +2,7 @@
   <div class="home">
     <main>
         <div v-for="post in posts" :key="post.id"   class="description">
-            <img class="photo__img" src="https://source.unsplash.com/random/200x200/?portrait" alt="">
+            <img class="photo__img" :src="post._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url">
             <h1 class="description__title">{{post.title.rendered}}</h1>
             <p v-html="post.content.rendered" class="description__paragraph"></p>
         </div>
@@ -48,6 +48,7 @@ main{
 .description{
   text-align: center;
   color: #ffff;
+  margin: 0.5rem;
 }
 
 .description__title{

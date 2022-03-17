@@ -5,21 +5,21 @@ const postService = {
 
         async loadPosts(){
             console.log('On est dans loadPost !!!');
-            const response = await axios.get(postService.baseURI + '/posts');
+            const response = await axios.get(postService.baseURI + '/posts?_embed=true');
             console.log(response.data);
             return response.data;
         },
 
         async loadProjects(){
             console.log('On est dans loadProjects !!!');
-            const response = await axios.get(postService.baseURI + '/projects');
+            const response = await axios.get(postService.baseURI + '/projects?_embed=true');
             console.log(response.data);
             return response.data;
         },
 
         async loadAboutPosts(){
             console.log('On est dans loadAboutPosts !!!');
-            const response = await axios.get(postService.baseURI + '/about');
+            const response = await axios.get(postService.baseURI + '/about?_embed=true');
             console.log(response.data);
             return response.data;
         },
