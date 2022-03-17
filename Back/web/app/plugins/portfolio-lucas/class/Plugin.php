@@ -193,7 +193,23 @@ class Plugin {
 
         register_post_type('link', $args);
 
-        register_meta('post', 'lien', [
+        register_meta('post', 'lienGithub', [
+            'object_subtype' => 'link', 
+            'type'           => 'string',
+            'description'    => 'footer link',
+            'single'         => true,
+            'show_in_rest'   => true,
+        ]);
+
+        register_meta('post', 'lienLinkedin', [
+            'object_subtype' => 'link', 
+            'type'           => 'string',
+            'description'    => 'footer link',
+            'single'         => true,
+            'show_in_rest'   => true,
+        ]);
+
+        register_meta('post', 'email', [
             'object_subtype' => 'link', 
             'type'           => 'string',
             'description'    => 'footer link',
