@@ -4,7 +4,7 @@
         <div>
             <ul>
                 <li v-for="projectsPost in projectsPosts" :key="projectsPost.id">
-                    <a v-bind:href="projectsPost.meta.github" target="_blank">
+                    <a :href="projectsPost.meta.github" target="_blank">
                         <img :src="projectsPost._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url">
                     </a>
                 </li>

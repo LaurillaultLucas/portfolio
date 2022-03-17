@@ -23,6 +23,13 @@ const postService = {
             console.log(response.data);
             return response.data;
         },
+
+        async loadLink(){
+            console.log('On est dans loadLink');
+            const response = await axios.get(postService.baseURI + '/link?_embed=true');
+            console.log(response.data);
+            return response.data;
+        },
 };
 
 export default postService;
