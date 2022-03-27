@@ -18,18 +18,13 @@ class Plugin {
         );
 
         add_action(
-        'init',
-        [$this, 'portfolio_create_techno_custom_taxonomy']
-        );
-
-        add_action(
-            'init',
-            [$this, 'portfolio_create_myWork_post_type']
-        );
-
-        add_action(
             'init',
             [$this, 'portfolio_create_link_post_type']
+        );
+
+        add_action(
+            'init', 
+            [$this, 'portfolio_create_work_type_taxonomy']
         );
     }
 
@@ -126,40 +121,6 @@ class Plugin {
         register_taxonomy('technos', 'projects', 'about', $args);
     }
 
-    public function portfolio_create_myWork_post_type()
-    {
-
-        // Method that allows us to add CPT
-        $labels = [
-            'name' => 'Mes réalisations',
-            'all_items' => 'Tout les articles',
-            'singular_name' => 'Mes réalisations',
-            'add_new_item' => 'Ajouter un post',
-            'edit_item' => 'Modifier le post',
-            'menu_name' => 'Mes réalisations'
-        ];
-
-        $args = [
-            'labels' => $labels,
-            'public' => true,
-            'show_in_rest' => true,
-            'has_archive' => true,
-            'supports' => [
-                'title',
-                'editor',
-                'thumbnail',
-                'revisions',
-                'excerpt',
-                'custom-fields'
-            ],
-            'menu_position' => 6,
-            'menu_icon' => 'dashicons-art'
-        ];
-
-        register_post_type('myWork', $args);
-
-    }
-
     public function portfolio_create_link_post_type()
     {
 
@@ -216,5 +177,20 @@ class Plugin {
             'single'         => true,
             'show_in_rest'   => true,
         ]);
+    }
+
+    public function portfolio_create_work_type_taxonomy()
+    {
+        // Methode qui nous permet d'ajouter la Custom taxo "Type de projet"
+        register_taxonomy(
+            'Type de projet',
+            ['projects'], // seul les projets pourront avoir un/des types
+            [
+                'label' => 'Type',
+                'hierarchical' => true,
+                'public' => true,
+                'show_in_rest' => true
+            ]
+        );
     }
 }
