@@ -1,7 +1,7 @@
 <template>
     <div class="work">
-        <!--<h1>Mes réalistations</h1>-->
-        <div>
+        <FilterWork />
+        <div class="work__link">
             <ul>
                 <li v-for="projectsPost in projectsPosts" :key="projectsPost.id">
                     <a :href="projectsPost.meta.github" target="_blank">
@@ -16,9 +16,11 @@
 <script>
 
 import postService from '../services/postService.js';
+import FilterWork from '../components/FilterWork.vue';
 
 export default {
-  components: { 
+  components: {
+      FilterWork,
   },
   name: 'Work',
 
@@ -36,21 +38,12 @@ export default {
 
 }
 
-
-
-
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 
-h1{
-    color: white;
-    text-align: center;
-}
-
-div{
+.work__link{
    
     ul{
         display: flex;
