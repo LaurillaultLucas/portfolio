@@ -183,7 +183,7 @@ class Plugin {
     {
         // Methode qui nous permet d'ajouter la Custom taxo "Type de projet"
         register_taxonomy(
-            'Type de projet',
+            'type-de-projet',
             ['projects'], // seul les projets pourront avoir un/des types
             [
                 'label' => 'Type',
