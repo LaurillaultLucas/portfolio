@@ -18,13 +18,13 @@ class Plugin {
         );
 
         add_action(
-        'init',
-        [$this, 'portfolio_create_techno_custom_taxonomy']
+            'init',
+            [$this, 'portfolio_create_link_post_type']
         );
 
         add_action(
-            'init',
-            [$this, 'portfolio_create_myWork_post_type']
+            'init', 
+            [$this, 'portfolio_create_work_type_taxonomy']
         );
     }
 
@@ -61,22 +61,13 @@ class Plugin {
 
         register_post_type('projects', $args);
 
-        register_meta('post', 'Github', [
+        register_meta('post', 'github', [
             'object_subtype' => 'projects', 
             'type'           => 'string',
             'description'    => 'github link',
             'single'         => true,
             'show_in_rest'   => true,
         ]);
-
-        register_meta('post', 'Site', [
-            'object_subtype' => 'projects', 
-            'type'           => 'string',
-            'description'    => 'Site link',
-            'single'         => true,
-            'show_in_rest'   => true,
-        ]);
-
     }
 
     public function portfolio_create_about_post_type()
@@ -130,17 +121,17 @@ class Plugin {
         register_taxonomy('technos', 'projects', 'about', $args);
     }
 
-    public function portfolio_create_myWork_post_type()
+    public function portfolio_create_link_post_type()
     {
 
         // Method that allows us to add CPT
         $labels = [
-            'name' => 'Mes réalisations',
-            'all_items' => 'Tout les articles',
-            'singular_name' => 'Mes réalisations',
-            'add_new_item' => 'Ajouter un post',
-            'edit_item' => 'Modifier le post',
-            'menu_name' => 'Mes réalisations'
+            'name' => 'Liens Footer',
+            'all_items' => 'Tout les liens',
+            'singular_name' => 'lien',
+            'add_new_item' => 'Ajouter un lien',
+            'edit_item' => 'Modifier le lien',
+            'menu_name' => 'Liens'
         ];
 
         $args = [
@@ -156,13 +147,50 @@ class Plugin {
                 'excerpt',
                 'custom-fields'
             ],
-            'menu_position' => 6,
-            'menu_icon' => 'dashicons-art'
+            'menu_position' => 7,
+            'menu_icon' => 'dashicons-admin-links',
+            'map_meta_cap' => true,
         ];
 
-        register_post_type('myWork', $args);
+        register_post_type('link', $args);
 
+        register_meta('post', 'lienGithub', [
+            'object_subtype' => 'link', 
+            'type'           => 'string',
+            'description'    => 'footer link',
+            'single'         => true,
+            'show_in_rest'   => true,
+        ]);
+
+        register_meta('post', 'lienLinkedin', [
+            'object_subtype' => 'link', 
+            'type'           => 'string',
+            'description'    => 'footer link',
+            'single'         => true,
+            'show_in_rest'   => true,
+        ]);
+
+        register_meta('post', 'email', [
+            'object_subtype' => 'link', 
+            'type'           => 'string',
+            'description'    => 'footer link',
+            'single'         => true,
+            'show_in_rest'   => true,
+        ]);
     }
 
-
+    public function portfolio_create_work_type_taxonomy()
+    {
+        // Methode qui nous permet d'ajouter la Custom taxo "Type de projet"
+        register_taxonomy(
+            'type-de-projet',
+            ['projects'], // seul les projets pourront avoir un/des types
+            [
+                'label' => 'Type',
+                'hierarchical' => true,
+                'public' => true,
+                'show_in_rest' => true
+            ]
+        );
+    }
 }

@@ -37,7 +37,6 @@ export default {
         justify-content: initial;
         align-items: initial;
         margin: auto;
-        margin-bottom: 2.5rem;
 
         section{
             text-align: center;
@@ -63,6 +62,10 @@ export default {
                 border-bottom: solid #ffff 0.5px;
                 padding: 2rem;
             }
-        }
+
+            section:last-child{
+            border: none;
+            }
+        } 
     }
 </style>
