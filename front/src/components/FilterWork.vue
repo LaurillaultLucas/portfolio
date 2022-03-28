@@ -1,18 +1,44 @@
 <template>
-    <div class="nav">
         <div class="work__filter">
-            <select name="" id="">
-                <option value="">Tous</option>
-                <option value="">Clients</option>
-                <option value="">Personnels</option>
+            <select
+                v-if="projectTypes.length"
+                @change="handleSelectedType"
+                v-model="selectedType"
+            >
+                <option
+                v-for="type in projectTypes"
+                :key="type.id"
+                :value="type.id"
+                >{{type.name}}</option>
             </select>
         </div>
-    </div>
 </template>
 
 <script>
+import postService from '../services/postService';
+
 export default {
-  name: 'FilterWork'
+  name: 'FilterWork',
+  async created(){
+      this.projectTypes = await postService.loadTypesProjects();
+  },
+
+  data(){
+      return {
+          projectTypes: [],
+          selectedType: 9,
+      };
+  },
+  methods : {
+    handleSelectedType: function(evt){
+      console.log('event change');
+      evt.preventDefault();
+        this.$emit(
+          'type-selected',
+          this.selectedType
+        );
+    }
+  }
 }
 </script>
 
@@ -23,16 +49,17 @@ export default {
 
     display: flex;
     justify-content: center;
+    margin-top: 1.5rem;
     
         select{
             width: 120px;
             height: 30px;
-            border: .5px solid #ffff;
+            border: 1px solid #ffff;
             font-size: 13px;
             color: #fff;
             background-color: #11ffee00;
             letter-spacing: .1rem;
-            font-weight: 200;
+            font-weight: lighter;
         }
 }
 

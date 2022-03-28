@@ -30,6 +30,16 @@ const postService = {
             console.log(response.data);
             return response.data;
         },
+
+        async loadTypesProjects(){
+            const response = await axios.get(postService.baseURI + '/type-de-projet?_embed=true');
+            return response.data;
+        },
+
+        async getProjectByType(selectedType){
+            const response = await axios.get(postService.baseURI + '/projects?_embed=true&type-de-projet=' + selectedType);
+            return response.data;
+        },
 };
 
 export default postService;
