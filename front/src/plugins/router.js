@@ -5,6 +5,7 @@ import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Work from '../views/Work.vue'
 import Contact from '../views/Contact.vue'
+import Login from '../views/Login.vue'
 
 Vue.use(VueRouter)
 
@@ -32,6 +33,12 @@ const routes = [
       path: '/contact', // URL configuration to match
       name: 'contact', // road name
       component: Contact // component to call
+    },
+
+    {
+      path: '/login', // URL configuration to match
+      name: 'login', // road name
+      component: Login // component to call
     },
 ]
 

@@ -7,3 +7,4 @@
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 require_once dirname(__DIR__) . '/config/application.php';
 require_once ABSPATH . 'wp-settings.php';
+define('JWT_AUTH_SECRET_KEY', 'u`_{V`2FFlPi|nv?Zm_RQxN=ph#ii6>.n5aOjn?&*),KUdSYWcs`iUavr5Pn,#S3');
